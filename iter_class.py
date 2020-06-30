@@ -34,9 +34,9 @@ class WikiIter:
             raise StopIteration
         index = self.count
         self.count += 1
-        with open(self.file_to_write, 'w', encoding='utf8') as file:
+        with open(self.file_to_write, 'a', encoding='utf8') as file:
                 file.write(f"{self.countries_list[index]}," \
-                      f"has link on wiki as=> {wiki_link + self.countries_list[index]}")
+                      f"has link on wiki as=> {wiki_link + self.countries_list[index]}\n")
         return self.countries_list[index]
 
 
